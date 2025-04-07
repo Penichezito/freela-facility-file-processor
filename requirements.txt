@@ -1,0 +1,12 @@
+Flask>=2.3.3
+Flask-SQLAlchemy>=3.1.1
+Flask-Migrate>=4.0.5
+Flask-Cors>=4.0.0
+Werkzeug>=2.3.7
+google-cloud-vision>=3.4.5
+SQLAlchemy>=2.0.23
+psycopg2-binary>=2.9.9
+alembic>=1.12.1
+python-dotenv>=1.0.0
+python-magic>=0.4.27
+uuid>=1.30
