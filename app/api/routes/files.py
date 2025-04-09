@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 from werkzeug.utils import secure_filename
 
-from flask import Blueprint, request, jsonnify, current_app, send_file
+from flask import Blueprint, request, jsonify, current_app, send_file
 from werkzeug.exceptions import BadRequest, NotFound
 
 from app.db.database import db
@@ -80,7 +80,7 @@ def upload_file():
         db.session.commit()
 
     # Retornar os dados do arquivo 
-    return jsonnify({
+    return jsonify({
         "id": new_file.id,
         "original_filename": new_file.original_filename,
         "stored_filename": new_file.stored_filename,
@@ -123,7 +123,7 @@ def list_files():
     # Executar a consulta e obter os resultados
     files = query.all()
 
-    return jsonnify([file.todict() for file in files])
+    return jsonify([file.todict() for file in files])
 
 @files_bp.route("/<int:file_id/tags>", methods=["POST"])
 def add_tags_to_files(file_id):
@@ -150,7 +150,7 @@ def add_tags_to_files(file_id):
 
     db.session.commit()
 
-    return jsonnify({
+    return jsonify({
         "message": "Tags adicionadas com sucesso.",
         "file_id": file.id,
         "added_tags": added_tags,
