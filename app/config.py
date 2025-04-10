@@ -18,15 +18,15 @@ class Config:
 
     # Tipos de arquivos permitidos
     ALLOWED_EXTENSIONS = {
-            "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".svg", ".webp", ".ico", ".raw", ".psd"],
-            "Documents": [".pdf", ".doc", ".docx", ".txt", ".rtf", ".odt", ".md", ".tex", ".epub", ".mobi", ".azw", ".pages"],
-            "Spreadsheets": [".xls", ".xlsx", ".csv", ".tsv", ".ods", ".numbers", ".xlsm", ".xlsb", ".xltx", ".xltm"],
-            "Presentations": [".ppt", ".pptx", ".key", ".odp", ".pps", ".ppsx"],
-            "Videos": [".mp4", ".mov", ".avi", ".mkv", ".wmv", ".flv", ".webm", ".m4v", ".mpg", ".mpeg", ".3gp", ".ogv"],
-            "Music": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a", ".opus", ".alac", ".aiff", ".mid", ".midi"],
-            "Archives": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz", ".iso"],
-            "Code": [".py", ".js", ".html", ".css", ".java", ".cpp", ".c", ".h", ".php", ".rb", ".go", ".swift", ".json", ".xml"],
-            "Data": [".db", ".sqlite", ".sql", ".json", ".xml", ".yaml", ".yml", ".parquet", ".feather", ".hdf5", ".h5"]
+            "images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".svg", ".webp", ".ico", ".raw", ".psd"],
+            "documents": [".pdf", ".doc", ".docx", ".txt", ".rtf", ".odt", ".md", ".tex", ".epub", ".mobi", ".azw", ".pages"],
+            "spreadsheets": [".xls", ".xlsx", ".csv", ".tsv", ".ods", ".numbers", ".xlsm", ".xlsb", ".xltx", ".xltm"],
+            "presentations": [".ppt", ".pptx", ".key", ".odp", ".pps", ".ppsx"],
+            "videos": [".mp4", ".mov", ".avi", ".mkv", ".wmv", ".flv", ".webm", ".m4v", ".mpg", ".mpeg", ".3gp", ".ogv"],
+            "music": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a", ".opus", ".alac", ".aiff", ".mid", ".midi"],
+            "archives": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz", ".iso"],
+            "code": [".py", ".js", ".html", ".css", ".java", ".cpp", ".c", ".h", ".php", ".rb", ".go", ".swift", ".json", ".xml"],
+            "data": [".db", ".sqlite", ".sql", ".json", ".xml", ".yaml", ".yml", ".parquet", ".feather", ".hdf5", ".h5"]
         }
     
     # Configurações de tag
