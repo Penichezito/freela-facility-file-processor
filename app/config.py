@@ -23,7 +23,7 @@ class Config:
             "spreadsheets": [".xls", ".xlsx", ".csv", ".tsv", ".ods", ".numbers", ".xlsm", ".xlsb", ".xltx", ".xltm"],
             "presentations": [".ppt", ".pptx", ".key", ".odp", ".pps", ".ppsx"],
             "videos": [".mp4", ".mov", ".avi", ".mkv", ".wmv", ".flv", ".webm", ".m4v", ".mpg", ".mpeg", ".3gp", ".ogv"],
-            "music": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a", ".opus", ".alac", ".aiff", ".mid", ".midi"],
+            "audio": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a", ".opus", ".alac", ".aiff", ".mid", ".midi"],
             "archives": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz", ".iso"],
             "code": [".py", ".js", ".html", ".css", ".java", ".cpp", ".c", ".h", ".php", ".rb", ".go", ".swift", ".json", ".xml"],
             "data": [".db", ".sqlite", ".sql", ".json", ".xml", ".yaml", ".yml", ".parquet", ".feather", ".hdf5", ".h5"]
