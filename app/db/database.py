@@ -10,7 +10,7 @@ convention = {
 }
 
 metadata = MetaData(naming_convention=convention)
-db = SQLAlchemy(metada=metadata)
+db = SQLAlchemy(metadata=metadata)
 
 def init_db(app):
     """Inicializa o banco de dados com a aplicação Flask"""

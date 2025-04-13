@@ -81,7 +81,7 @@ def get_file_type(filename, content_type=None):
             return "audio"
         elif content_type.startswith("archives/"):
             return "archives"
-        elif content_type.startwith("code/"):
+        elif content_type.startswith("code/"):
             return "code"
         elif content_type.startswith("data"):
             return "data"

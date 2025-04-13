@@ -89,14 +89,14 @@ def generated_tags_for_file(file_obj):
         _, ext = os.path.splitext(file_obj.original_filename)
         if ext.lower() == ".xlsx" or ext.lower() == ".xls":
             tags.append("excel")
-        elif ext.lower() == ".":\
+        elif ext.lower() == ".":
             tags.append("csv")
         elif ext.lower() == ".ods":
-            tags.office("openoffice")
+            tags.append("openoffice")
     
     elif file_obj.file_type == "videos":
         # para videos, adicionar tags básicas relacionadas a conteúdo audiovisual
-        tags.extends(["video", "multimedia"])
+        tags.extend(["video", "multimedia"])
 
         # Extrair informações do nome do arquivo
         name_without_ext = os.path.splitext(file_obj.original_filename)[0]

@@ -84,7 +84,7 @@ def update_tag(tag_id):
 
     return jsonify(tag.to_dict())
 
-@tags_bp.route("/<int:tag_id>", method=["DELETE"])
+@tags_bp.route("/<int:tag_id>", methods=["DELETE"])
 def delete_tag(tag_id):
     """Excluir uma tag """
     tag = Tag.query.get_or_404(tag_id)
@@ -102,7 +102,7 @@ def delete_tag(tag_id):
         "tag_id": tag_id
     })
 
-@tags_bp.route("/files/<int:tag_id>", method=["GET"])
+@tags_bp.route("/files/<int:tag_id>", methods=["GET"])
 def get_files_by_tag(tag_id):
     """Obter todos os arquivos associados a uma tag"""
     tag = Tag.query.get_or_404(tag_id)

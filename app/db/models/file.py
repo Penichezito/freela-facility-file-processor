@@ -3,8 +3,8 @@ from app.db.database import db
 
 # Tabela de associação entre arquivos e tags
 file_tags = db.Table("file_tags",
-    db.Column("file_id", db.Integer, db.ForeignKey("file.id"), primary_key=True),
-    db.Column("tag_id", db.Integer, db.ForeinKey("tag.id"), primary_key=True)
+    db.Column("file_id", db.Integer, db.ForeignKey("files.id"), primary_key=True),
+    db.Column("tag_id", db.Integer, db.ForeignKey("tag.id"), primary_key=True)
 )
 
 class File(db.Model):
@@ -19,7 +19,7 @@ class File(db.Model):
     content_type = db.Column(db.String(100), nullable=False)
     
     # Metadados adicionais
-    metadata = db.column(db.JSON, nullable=True)
+    metadata = db.Column(db.JSON, nullable=True)
 
     # Campos para rastreamento de alterações
     external_id = db.Column(db.Integer, nullable=True)
@@ -31,7 +31,7 @@ class File(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.now(datetime.timezone.utc), onupdate=datetime.now(datetime.timezone.utc))
 
     # Relações
-    tags = db.relationships("Tag", secondary=file_tags, backref=db.backref("files", lazy="dynamic"))
+    tags = db.relationship("Tag", secondary=file_tags, backref=db.backref("files", lazy="dynamic"))
 
     def __repr__(self):
         return f"<File {self.original_filename}>"

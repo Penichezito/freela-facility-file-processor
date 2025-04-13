@@ -6,7 +6,7 @@ class Tag(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False, unique=True)
-    description = db.Columns(db.String(255), nullable=True)
+    description = db.Column(db.String(255), nullable=True)
 
     # Indicador se a tag foi gerada automaticamente
     auto_generated = db.Column(db.Boolean, default=False)
@@ -15,10 +15,10 @@ class Tag(db.Model):
     usage_count = db.Column(db.Integer, default=0)
 
     # Timestamps
-    created_at = db.Column(db.Datetime, default=datetime.now(datetime.timezone.utc))
-    updated_at = db.Column(db.Datetime, default=datetime.now(datetime.timezone.utc), onupdate=datetime.now(datetime.timezone.utc))
+    created_at = db.Column(db.DateTime, default=datetime.now(datetime.timezone.utc))
+    updated_at = db.Column(db.DateTime, default=datetime.now(datetime.timezone.utc), onupdate=datetime.now(datetime.timezone.utc))
 
-    def _repr_(self):
+    def __repr__(self):
         return f"<Tag {self.name}>"
     
     def to_dict(self):

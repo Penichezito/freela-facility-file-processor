@@ -30,41 +30,41 @@ def analyze_images(image_path: str) -> List[str]:
         return ["images"]
     
     try:
-            # Inicializar o cliente Vision
-            client = vision.ImageAnnotatorClient()
-            
-            # Carregar a imagem
-            with io.open(image_path, 'rb') as image_file:
-                content = image_file.read()
-            
-            image = vision.Image(content=content)
-            
-            # Detectar características na imagem
-            features = [
-                {'type_': vision.Feature.Type.LABEL_DETECTION, 'max_results': 5},
-                {'type_': vision.Feature.Type.OBJECT_LOCALIZATION, 'max_results': 5},
-            ]
-            
-            request = vision.AnnotateImageRequest(
-                image=image,
-                features=features,
-            )
-            
-            response = client.annotate_image(request=request)
-            
-            # Extrair as tags dos rótulos
-            tags = []
-            
-            # Adicionar rótulos de objetos
-            for label in response.label_annotations:
-                tags.append(label.description.lower())
-            
-            # Adicionar objetos localizados
-            for obj in response.localized_object_annotations:
-                tags.append(obj.name.lower())
-            
-            # Retornar tags únicas
-            return list(set(tags))
+        # Inicializar o cliente Vision
+        client = vision.ImageAnnotatorClient()
+        
+        # Carregar a imagem
+        with io.open(image_path, 'rb') as image_file:
+            content = image_file.read()
+        
+        image = vision.Image(content=content)
+        
+        # Detectar características na imagem
+        features = [
+            {'type_': vision.Feature.Type.LABEL_DETECTION, 'max_results': 5},
+            {'type_': vision.Feature.Type.OBJECT_LOCALIZATION, 'max_results': 5},
+        ]
+        
+        request = vision.AnnotateImageRequest(
+            image=image,
+            features=features,
+        )
+        
+        response = client.annotate_image(request=request)
+        
+        # Extrair as tags dos rótulos
+        tags = []
+        
+        # Adicionar rótulos de objetos
+        for label in response.label_annotations:
+            tags.append(label.description.lower())
+        
+        # Adicionar objetos localizados
+        for obj in response.localized_object_annotations:
+            tags.append(obj.name.lower())
+        
+        # Retornar tags únicas
+        return list(set(tags))
         
     except Exception as e:
         current_app.logger.error(f"Error analyzing image: {str(e)}")

@@ -40,7 +40,7 @@ def upload_file():
 
     # Gerar um nome único para o arquivo no aramazenamento
     ext = os.path.splitext(original_filename)[1]
-    stored_filename = f"{uuid.uiid4().hex}{ext}"
+    stored_filename = f"{uuid.uuid4().hex}{ext}"
 
     # Determinar o tipo de arquivo 
     file_type = get_file_type(original_filename, content_type)
@@ -125,7 +125,7 @@ def list_files():
 
     return jsonify([file.todict() for file in files])
 
-@files_bp.route("/<int:file_id/tags>", methods=["POST"])
+@files_bp.route("/<int:file_id>/tags", methods=["POST"])
 def add_tags_to_files(file_id):
     """Adicionar tags a um arquivo"""
     file = File.query.get_or_404(file_id)
